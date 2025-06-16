@@ -1,33 +1,29 @@
 import { Layout, Menu, type MenuProps } from "antd";
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 const items: MenuProps["items"] = [
   {
-    key: "jayed",
-    label: "Dashboard",
+    key: "Dashboard",
+    label: <NavLink to="/admin/dashboard">Dashboard</NavLink>,
   },
   {
-    key: "jayadfed",
-    label: "Profile",
-  },
-  {
-    key: "ksfl",
+    key: "User Management",
     label: "User Management",
     children: [
       {
-        key: "sdf",
-        label: "Create Admin",
+        key: "Create Admin",
+        label: <NavLink to="/admin/create-admin">Create Admin</NavLink>,
       },
       {
-        key: "sdfdd",
-        label: "Create Student",
+        key: "Create Faculty",
+        label: <NavLink to="/admin/create-faculty">Create Faculty</NavLink>,
+      },
+      {
+        key: "Create Student",
+        label: <NavLink to="/admin/create-student">Create Student</NavLink>,
       },
     ],
-  },
-  {
-    key: "sdffs",
-    label: "History",
   },
 ];
 
