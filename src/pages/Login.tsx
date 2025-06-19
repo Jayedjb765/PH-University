@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import { useForm, type FieldValues } from "react-hook-form";
-import { useLoginMutation } from "../redux/api/authApi";
+import { useLoginMutation } from "../redux/features/auth/authApi";
 import { useAppDispatch } from "../redux/hooks";
 import { setUser, type TUser } from "../redux/features/auth/authSlice";
 import { verifyToken } from "../utils/verifyToken";
