@@ -37,4 +37,4 @@ export default authSlice.reducer;
 
 export const userCurrentToken = (state: RootState) => state.auth.token;
 
-export const useCurrentUser = (state: RootState) => state.auth.user;
+export const selectCurrentUser = (state: RootState) => state.auth.user;
