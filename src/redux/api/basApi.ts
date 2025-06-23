@@ -1,6 +1,7 @@
-import { fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { createApi } from "@reduxjs/toolkit/query/react";
 import type { RootState } from "../store";
+
 const baseQuery = fetchBaseQuery({
   baseUrl: "http://localhost:5000/api/v1",
   credentials: "include",
@@ -13,12 +14,9 @@ const baseQuery = fetchBaseQuery({
     return headers;
   },
 });
-const basequeryWithRefreshToken = async (args, api, extraOptions) => {
-  const result = await baseQuery(args, api, extraOptions);
-  console.log(result);
-};
+
 export const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: basequeryWithRefreshToken,
+  baseQuery: baseQuery,
   endpoints: () => ({}),
 });
