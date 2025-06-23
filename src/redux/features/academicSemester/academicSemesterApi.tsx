@@ -1,14 +1,14 @@
 import { baseApi } from "../../api/basApi";
 
-const academeicSemesterAPi = baseApi.injectEndpoints({
+const academicSemesterApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getAllSemester: builder.query({
+    getAllSemesters: builder.query({
       query: () => ({
-        url: "//academic-semesters",
+        url: "/academic-semesters",
         method: "GET",
       }),
     }),
   }),
 });
 
-export const { useGetAllSemesterQuery } = academeicSemesterAPi;
+export const { useGetAllSemestersQuery } = academicSemesterApi;
